@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Builder</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/shoelace.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/themes/light.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        #toolbar {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            width: 100%;
+            justify-content: center;
+        }
+        #canvas-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="toolbar">
+        <sl-button variant="primary" onclick="clearGrid()">Clear Grid</sl-button>
+        <sl-button variant="success" onclick="saveBuild()">Save Build</sl-button>
+        <sl-button variant="warning" onclick="loadBuild()">Load Build</sl-button>
+        <sl-button variant="danger" onclick="setBlockColor('red')">Red</sl-button>
+        <sl-button variant="warning" onclick="setBlockColor('yellow')">Yellow</sl-button>
+        <sl-button variant="success" onclick="setBlockColor('green')">Green</sl-button>
+        <sl-button variant="primary" onclick="setBlockColor('blue')">Blue</sl-button>
+    </div>
+    <div id="canvas-container">
+        <canvas id="gridCanvas" width="500" height="500"></canvas>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Builder</title>
+    <!-- <script type="module">
+        import "https://cdn.jsdelivr.net/npm/lit@2.6.1";
+        </script>     -->
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/shoelace.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/themes/light.css"> -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        #toolbar {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            width: 100%;
+            justify-content: center;
+        }
+        #canvas-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="toolbar">
+        <button style="background-color: red; color: white;" onclick="setBlockColor('red')">Red</button>
+        <button style="background-color: yellow;" onclick="setBlockColor('yellow')">Yellow</button>
+        <button style="background-color: green; color: white;" onclick="setBlockColor('green')">Green</button>
+        <button style="background-color: blue; color: white;" onclick="setBlockColor('blue')">Blue</button>
+    </div>
+    
+    <!-- <div id="toolbar">
+        <sl-button variant="danger" onclick="setBlockColor('red')">Red</sl-button>
+        <sl-button variant="warning" onclick="setBlockColor('yellow')">Yellow</sl-button>
+        <sl-button variant="success" onclick="setBlockColor('green')">Green</sl-button>
+        <sl-button variant="primary" onclick="setBlockColor('blue')">Blue</sl-button>
+    </div> -->
+    <div id="canvas-container">
+        <canvas id="gridCanvas" width="500" height="500"></canvas>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
