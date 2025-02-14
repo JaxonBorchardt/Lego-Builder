@@ -11,13 +11,21 @@ class Block {
     }
 }
 
+
 // Add a new block at a specific grid position
-function addBlock(x, y, color) {
+function addBlock(x, y, color, width = 1, height = 1) {
     if (!getBlockAt(x, y)) {
-        //blocks.push(new Block(x, y));
-        blocks.push({x,y,color})
+        blocks.push({ x, y, width, height, color });
     }
 }
+
+// function addBlock(x, y, color) {
+//     if (!getBlockAt(x, y)) {
+//         //blocks.push(new Block(x, y));
+//         blocks.push({x,y,color})
+//     }
+// }
+
 
 // Find block at given grid position
 function getBlockAt(x, y) {

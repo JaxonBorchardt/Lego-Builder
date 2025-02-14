@@ -4,42 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lego Builder</title>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/shoelace.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/themes/light.css">
     <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background: #F7C600; 
         }
+        
         #toolbar {
             display: flex;
             gap: 10px;
-            padding: 10px;
-            background: #f0f0f0;
-            width: 100%;
+            padding: 15px;
+            background: #D62828; 
+            width: 90%;
             justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
         }
+        
         #canvas-container {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
         }
+        
         canvas {
-            border: 1px solid black;
+            border: 5px solid #0057A6; 
+            border-radius: 5px;
         }
+        
+        button {
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s ease-in-out;
+        }
+        
+        button:active {
+            box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+        
+        .red { background-color: #D62828; }
+        .yellow { background-color: #F7C600; color: black; }
+        .green { background-color: #008C45; }
+        .blue { background-color: #0057A6; }
     </style>
 </head>
 <body>
     <div id="toolbar">
-        <sl-button variant="primary" onclick="clearGrid()">Clear Grid</sl-button>
-        <sl-button variant="success" onclick="saveBuild()">Save Build</sl-button>
-        <sl-button variant="warning" onclick="loadBuild()">Load Build</sl-button>
-        <sl-button variant="danger" onclick="setBlockColor('red')">Red</sl-button>
-        <sl-button variant="warning" onclick="setBlockColor('yellow')">Yellow</sl-button>
-        <sl-button variant="success" onclick="setBlockColor('green')">Green</sl-button>
-        <sl-button variant="primary" onclick="setBlockColor('blue')">Blue</sl-button>
+        <button class="red" onclick="setBlockColor('red')">Red</button>
+        <button class="yellow" onclick="setBlockColor('yellow')">Yellow</button>
+        <button class="green" onclick="setBlockColor('green')">Green</button>
+        <button class="blue" onclick="setBlockColor('blue')">Blue</button>
     </div>
     <div id="canvas-container">
         <canvas id="gridCanvas" width="500" height="500"></canvas>
@@ -48,57 +76,80 @@
 </body>
 </html> -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lego Builder</title>
-    <!-- <script type="module">
-        import "https://cdn.jsdelivr.net/npm/lit@2.6.1";
-        </script>     -->
-    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/shoelace.js"></script> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/themes/light.css"> -->
     <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background: #F7C600; /* Classic Lego Yellow */
         }
+        
         #toolbar {
             display: flex;
             gap: 10px;
-            padding: 10px;
-            background: #f0f0f0;
-            width: 100%;
+            padding: 15px;
+            background: #D62828; /* Classic Lego Red */
+            width: 90%;
             justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
         }
+        
         #canvas-container {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
         }
+        
         canvas {
-            border: 1px solid black;
+            border: 5px solid #0057A6; /* Classic Lego Blue */
+            border-radius: 5px;
         }
+        
+        button {
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s ease-in-out;
+        }
+        
+        button:active {
+            box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+        
+        .red { background-color: #D62828; }
+        .yellow { background-color: #F7C600; color: black; }
+        .green { background-color: #008C45; }
+        .blue { background-color: #0057A6; }
+        .shape { background-color: #4B4B4B; }
     </style>
 </head>
 <body>
     <div id="toolbar">
-        <button style="background-color: red; color: white;" onclick="setBlockColor('red')">Red</button>
-        <button style="background-color: yellow;" onclick="setBlockColor('yellow')">Yellow</button>
-        <button style="background-color: green; color: white;" onclick="setBlockColor('green')">Green</button>
-        <button style="background-color: blue; color: white;" onclick="setBlockColor('blue')">Blue</button>
+        <button class="red" onclick="setBlockColor('red')">Red</button>
+        <button class="yellow" onclick="setBlockColor('yellow')">Yellow</button>
+        <button class="green" onclick="setBlockColor('green')">Green</button>
+        <button class="blue" onclick="setBlockColor('blue')">Blue</button>
+        <button class="shape" onclick="setBlockShape(1,1)">Square</button>
+        <button class="shape" onclick="setBlockShape(2,1)">Rectangle</button>
     </div>
-    
-    <!-- <div id="toolbar">
-        <sl-button variant="danger" onclick="setBlockColor('red')">Red</sl-button>
-        <sl-button variant="warning" onclick="setBlockColor('yellow')">Yellow</sl-button>
-        <sl-button variant="success" onclick="setBlockColor('green')">Green</sl-button>
-        <sl-button variant="primary" onclick="setBlockColor('blue')">Blue</sl-button>
-    </div> -->
     <div id="canvas-container">
         <canvas id="gridCanvas" width="500" height="500"></canvas>
     </div>
