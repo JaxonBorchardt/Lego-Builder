@@ -38,4 +38,12 @@ function updateBlockPosition(block, newX, newY) {
     block.y = newY;
 }
 
-export { blocks, addBlock, getBlockAt, updateBlockPosition };
+// function sum(a, b) {
+//     return a + b;
+//   }
+//   module.exports = sum;
+
+
+
+//module.exports = { blocks, addBlock, getBlockAt, updateBlockPosition  };
+export { blocks, addBlock, getBlockAt, updateBlockPosition  };

@@ -1,0 +1,13 @@
+{
+  "name": "portfolio_project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lego building project",
+  "main": "main.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}

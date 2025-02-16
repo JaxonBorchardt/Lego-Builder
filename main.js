@@ -3,7 +3,7 @@ import { blocks, addBlock, getBlockAt, updateBlockPosition } from "./block-manag
 const canvas = document.getElementById('gridCanvas');
 const ctx = canvas.getContext('2d');
 
-const gridSize = 50; 
+const gridSize = 31.25; 
 const rows = canvas.height / gridSize;
 const cols = canvas.width / gridSize;
 let draggingBlock = null;
