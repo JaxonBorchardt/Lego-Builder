@@ -3,13 +3,13 @@ import { blocks, addBlock, getBlockAt, updateBlockPosition } from "./block-manag
 const canvas = document.getElementById('gridCanvas');
 const ctx = canvas.getContext('2d');
 
-const gridSize = 31.25; 
+const gridSize = 50; 
 const rows = canvas.height / gridSize;
 const cols = canvas.width / gridSize;
 let draggingBlock = null;
 let offsetX = 0, offsetY = 0;
-let currentBlockColor = 'blue'; // Default block color
-let currentBlockShape = { width: 1, height: 1 }; // Default shape (1x1)
+let currentBlockColor = 'blue';
+let currentBlockShape = { width: 1, height: 1 };
 
 function setBlockColor(color) {
     currentBlockColor = color;
@@ -28,10 +28,10 @@ function drawLegoBlock(ctx, x, y, width, height, bumpRadius, color) {
     const bumpCount = Math.floor(width / (bumpRadius * 3));
     const bumpSpacing = width / bumpCount;
     
-    ctx.fillStyle = color; //"rgba(255, 255, 255, 0.6)"; 
+    ctx.fillStyle = color; 
     for (let i = 0; i < bumpCount; i++) {
         const bumpX = x + bumpSpacing * i + bumpSpacing / 2;
-        const bumpY = y - bumpRadius/4; // Move bumps higher so they sit on top
+        const bumpY = y - bumpRadius / 4; 
         ctx.beginPath();
         ctx.arc(bumpX, bumpY, bumpRadius, 0, Math.PI * 2);
         ctx.fill();

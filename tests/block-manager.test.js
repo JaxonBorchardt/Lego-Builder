@@ -10,3 +10,4 @@ test("should not place a block on an occupied space", () => {
     addBlock(3, 3, "green", 1, 1);
     expect(getBlockAt(3, 3).color).toBe("blue"); 
 });
+
