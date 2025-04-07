@@ -1,0 +1,154 @@
+/* body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar {
+    width: 100%;
+    height: 60px;
+    background: #ddd;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+#clear-canvas {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+ 
+  #clear-canvas i {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  
+  
+  #clear-canvas:hover {
+    background-color: #c0392b;
+  }
+  
+
+.color-button {
+    height: 40px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+#camera-controls {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+#camera-controls button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.color-button.red { background: red; }
+.color-button.blue { background: blue; }
+.color-button.green { background: green; }
+.color-button.yellow { background: yellow; color: black; }
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+} */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Topbar Styling */
+#topbar {
+    width: 100%;
+    height: 60px;
+    background: #ddd;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Button Styling */
+button {
+    height: 40px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Color Buttons */
+.color-button {
+    width: 100px;
+    color: white;
+}
+.color-button.red { background: red; }
+.color-button.blue { background: blue; }
+.color-button.green { background: green; }
+.color-button.yellow { background: yellow; color: black; }
+
+/* Clear Canvas Button */
+#clear-canvas {
+    background-color: #e74c3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#clear-canvas i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+#clear-canvas:hover {
+    background-color: #c0392b;
+}
+
+/* Canvas Styling */
+canvas {
+    display: block;
+    position: absolute;
+    top: 60px;
+    /*left: 120px;  Leaves space for the sidebar */
+    width: calc(100vw - 120px);
+    height: calc(100vh - 60px);
+  }
