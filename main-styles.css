@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Topbar Styling */
+#topbar {
+    width: 100%;
+    height: 60px;
+    background: #ddd;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Button Styling */
+button {
+    height: 40px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Color Buttons */
+.color-button {
+    width: 100px;
+    color: white;
+}
+.color-button.red { background: red; }
+.color-button.blue { background: blue; }
+.color-button.green { background: green; }
+.color-button.yellow { background: yellow; color: black; }
+
+.popup {
+    position: fixed;
+    top: 25%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid #333;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+  }
+  
+  .popup button {
+    margin-top: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+
+/* Clear Canvas Button */
+#clear-canvas {
+    background-color: #e74c3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#clear-canvas i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+#clear-canvas:hover {
+    background-color: #c0392b;
+}
+
+.mode-indicator {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    z-index: 1000;
+    pointer-events: none;
+    transition: background 0.3s ease;
+    user-select: none;
+}
+
+.mode-indicator.camera {
+    border-left: 4px solid #2196f3;
+}
+
+.mode-indicator.build {
+    border-left: 4px solid #4caf50;
+}
+
+
+/* Canvas Styling */
+canvas {
+    display: block;
+    position: absolute;
+    top: 60px;
+    width: calc(100vw - 120px);
+    height: calc(100vh - 60px);
+  }

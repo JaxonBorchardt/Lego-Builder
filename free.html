@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lego Builder 3D</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="styles_2.css">
+    <link rel="stylesheet" href="main-styles.css">
     
     <script type="importmap">
         {
@@ -18,14 +18,18 @@
 
     <script type="module">
         window.onload = () => {
-            import("./free_movement.js").then(module => {
-                module.init(); 
+            import("./main.js").then(module => {
+                //module.init(); 
             }).catch(error => console.error("Error loading module:", error));
         };
     </script>
 </head>
 <body>
     <div id="topbar">
+
+        <!-- Mode Indicator -->
+        <div id="mode-indicator" class="mode-indicator">🛠 Build Mode</div>
+
         <!-- Color Buttons -->
         <button class="color-button red" data-color="red">Red</button>
         <button class="color-button blue" data-color="blue">Blue</button>
@@ -42,6 +46,15 @@
             <i class="fas fa-trash-alt"></i> Clear Canvas
         </button>
     </div>
+
+    <div id="instruction-popup" class="popup">
+        <h2>👷 Lego Builder Tips</h2>
+        <ul>
+          <li>Press <b>T</b> to toggle build / camera mode</li>
+          <li>Select a block and press <b>Delete</b> to remove it</li>
+        </ul>
+      </div>
+          
     <canvas id="three-canvas"></canvas>
 </body>
 </html>
